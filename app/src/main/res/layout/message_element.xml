@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/message_background"
+    android:padding="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:elevation="6dp">
+
+    <TextView
+        android:id="@+id/messageAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:textStyle="bold"
+        android:text="Author"/>
+    <TextView
+        android:id="@+id/messageTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/messageAuthor"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBaseline="@id/messageAuthor"
+        android:textSize="12sp"
+        android:textColor="@color/messageDateTime"
+        android:textAlignment="viewEnd"
+        android:text="date/time" />
+    <TextView
+        android:id="@+id/messageBody"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/messageAuthor"
+        android:text="Message body"/>
+
+</RelativeLayout>
