@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginManager;
 import com.facebook.login.widget.LoginButton;
 import com.firebase.client.AuthData;
@@ -37,6 +38,7 @@ import java.util.Map;
 
 import alpvax.rau.R;
 import alpvax.rau.application.RauApplication;
+import alpvax.rau.message.MessagesActivity;
 
 /**
  * This application demos the use of the Firebase Login feature. It currently supports logging in
@@ -370,6 +372,7 @@ public class MainActivity extends ActionBarActivity implements
             if (name != null) {
                 mLoggedInStatusTextView.setText("Logged in as " + name + " (" + authData.getProvider() + ")");
             }
+            startActivity(new Intent(this, MessagesActivity.class));
         } else {
             /* No authenticated user show all the login buttons */
             mFacebookLoginButton.setVisibility(View.VISIBLE);
@@ -436,6 +439,22 @@ public class MainActivity extends ActionBarActivity implements
                 setAuthenticatedUser(null);
             }
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
     }
 
     /* ************************************

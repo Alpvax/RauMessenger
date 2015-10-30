@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/RauMessenger.iml" filepath="$PROJECT_DIR$/RauMessenger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rau Messenger.iml" filepath="$PROJECT_DIR$/Rau Messenger.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
