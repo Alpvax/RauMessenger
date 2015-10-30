@@ -18,4 +18,22 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
+
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_logout">Logout</string>
+    <string name="login_with_facebook">Login with Facebook</string>
+    <string name="login_with_google">Login with Google+</string>
+    <string name="login_with_twitter">Login with Twitter</string>
+    <string name="login_with_password">Login with Password</string>
+    <string name="login_anonymously">Login Anonymously</string>
+
+    <!-- Your Facebook App ID from your app settings on https://developers.facebook.com/ -->
+    <!-- More details here: https://www.firebase.com/docs/android/guide/login/facebook.html -->
+    <string name="facebook_app_id">1615306578731647</string>
+
+    <!-- Your Twitter consumer key and secret from your app settings on https://apps.twitter.com/ -->
+    <!-- More details here: https://www.firebase.com/docs/android/guide/login/twitter.html -->
+    <string name="twitter_consumer_key">Uj48gZSc9Ni7SRVRoOP8QJRkj</string>
+    <string name="twitter_consumer_secret">rWmm4AETVai1x6mMAis21o4jlfo9i5LfWa24XalqJOfeVRLOyg</string>
 </resources>

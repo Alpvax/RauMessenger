@@ -9,12 +9,12 @@ import android.widget.ListView;
 
 import com.firebase.client.ChildEventListener;
 import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 
 import java.util.Map;
 
 import alpvax.rau.R;
+import alpvax.rau.application.RauApplication;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -40,7 +40,7 @@ public class MessagesFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
         final MessageAdapter adapter = new MessageAdapter(getActivity());
         setListAdapter(adapter);
-        new Firebase("https://rau.firebaseio.com/messaging").child(conversation).addChildEventListener(new ChildEventListener() {
+        RauApplication.instance().getFirebaseRef("messaging", conversation).addChildEventListener(new ChildEventListener() {
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChild) {
                 adapter.addMessage(dataSnapshot.getKey(), (Map<String, Object>) dataSnapshot.getValue());
             }
