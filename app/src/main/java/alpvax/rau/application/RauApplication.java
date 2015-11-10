@@ -79,6 +79,7 @@ public class RauApplication extends Application
         super.onCreate();
         instance = this;
         Firebase.setAndroidContext(this);
+        Firebase.getDefaultConfig().setPersistenceEnabled(true);
         rootRef = new Firebase("https://rau.firebaseio.com");
         rootRef.addAuthStateListener(new AuthChangedListener());
         FacebookSdk.sdkInitialize(this);
